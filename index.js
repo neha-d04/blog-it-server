@@ -8,6 +8,12 @@ const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
 const multer = require('multer');
 const path = require('path');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+
+app.use(cors());
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json({extended:true}));
 
 dotenv.config();
 app.use(express.json());
